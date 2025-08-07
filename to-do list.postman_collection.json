@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "49b73745-d013-42f2-816c-3fb7b69d14ef",
+		"name": "to-do list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28170739"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/?pageNo=0&pageSize=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/3"
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Ali\",\r\n    \"email\": \"Ali@gmail.com\",\r\n    \"password\": \"@#Alicddvv45\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"foaz\",\r\n    \"email\": \"foaz@gmail.com\",\r\n    \"password\": \"@#foazdsmkdc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users/2"
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/users/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/tasks/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get task by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/tasks/4/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "create task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"go to gym\",\r\n    \"description\": \"build nice body\",\r\n    \"isCompleted\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/tasks/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"learn spring security\",\r\n    \"description\": \"try to enhance my to-do list projectcwith adding security dependency\",\r\n    \"isCompleted\": false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/tasks/2/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/tasks/3/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getTasksFromDateToDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/tasks/start/2025-08-03/end/2025-08-06/user/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "get all category",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"anoor\",\r\n    \"email\": \"anoor@gmail.com\",\r\n    \"password\": \"@$anoor@43fdf\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/categories/5/1"
+					},
+					"response": []
+				},
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"coffee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"ساشنهىل\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/categories/5/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/categories/6/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "health",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"amin\",\r\n    \"email\": \"amin@gmail.com\",\r\n    \"password\": \"@$Amin@43fdf\"\r\n\r\n}"
+						},
+						"url": "http://localhost:8080/actuator/health"
+					},
+					"response": []
+				},
+				{
+					"name": "metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/metrics"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
