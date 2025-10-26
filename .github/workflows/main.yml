@@ -23,7 +23,7 @@ jobs:
 
          
       - name: run spring project
-        run: mvn spring-boot:run
+        run: mvn clean package -DskipTests
 
 
         
