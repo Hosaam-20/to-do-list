@@ -21,9 +21,6 @@ spring:
 #      name: hussam
 #      password: 1234567
 
-
-server:
-  port:9090
   
 management:
   endpoints:
