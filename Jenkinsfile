@@ -1,10 +1,11 @@
-pipline {
-  node any
-  stages {
-    stage('build') {
-      steps {
-        echo "Build was done successfully...."
-}
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Build was done successfully...."
+            }
+        }
     }
- }
 }
